@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue CDN</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>Hell0, {{name}}</h1>
+    <p>{{}}两个花括号表示模板语法糖用于插值</p>
+    <p>年龄{{age}}</p>
+  </div>
+  <div id="app2">
+    <span></span>{{name}}, {{age}}
+
+  </div>
+  <p>el, 告诉当前的vue实例对象可以操作哪些容器</p>
+  <p>data, 是一个函数，返回一个对象，对象的属性可以在index.html中使用</p>
+</body>
+<script src="app.js"></script>
+</html>
