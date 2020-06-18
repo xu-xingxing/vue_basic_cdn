@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue CDN</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>Hell0, {{name}}</h1>
+    <p>{{}}两个花括号表示模板语法糖用于插值</p>
+    <p>年龄{{age}}</p>
+    <p>属性绑定</p>
+    <p>
+      <a href="https://www.baidu.com">baidu</a>
+    </p>
+    <p>
+      <a v-bind:href="website">baidu</a>
+      <a :href="website">baidu</a>
+    </p>
+    <p>以v开头 v-xxx即为指令</p>
+    <hr>
+    <p>{{}}模板语法不是预期的显示，无法解析标签</p>
+    <p>{{ websiteTag }}</p>
+    <p>v-html预期的显示，可以解析html标签</p>
+    <p v-html="websiteTag"></p>
+    <p>
+      <input type="text" value="name">
+      <input type="text" :value="name">
+    </p>
+  </div>
+</body>
+<script src="app.js"></script>
+</html>
