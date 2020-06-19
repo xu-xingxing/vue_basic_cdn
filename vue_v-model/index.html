@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue 双向数据绑定</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>双向数据绑定 input / select / textarea</h1>
+    <label>姓名</label>
+    <input type="text" v-model.lazy="name">
+    <span>{{ name }}</span>
+
+    <label>年龄</label>
+    <input type="text" v-model.number="age">
+    {{ typeof age }}
+  </div>
+</body>
+<script src="app.js"></script>
+</html>
