@@ -4,31 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vue CDN</title>
+  <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
   <div id="app">
-    <h1>Hell0, {{name}}</h1>
-    <p>{{}}两个花括号表示模板语法糖用于插值</p>
-    <p>年龄{{age}}</p>
-    <p>属性绑定</p>
+    <h1>Event</h1>
+    <button @click="age++">age++</button>
+    <button v-on:click.once="age--">age--</button>
+    <button @dblclick="add(10)">age+10年</button>
+    <button v-on:dblclick="subtract(10)">age-10年</button>
+    <p>age:{{age}}</p>
+
+    <!-- mousemove event -->
+    <div id="canvas" v-on:mousemove="updateXY">
+      {{x}}, {{y}}
+    </div>
+    <!-- 事件修饰符 -->
     <p>
-      <a href="https://www.baidu.com">baidu</a>
+      <a @click.prevent="handleClick" href="http://www.baidu.com">百度</a>
     </p>
-    <p>
-      <a v-bind:href="website">baidu</a>
-      <a :href="website">baidu</a>
-    </p>
-    <p>以v开头 v-xxx即为指令</p>
-    <hr>
-    <p>{{}}模板语法不是预期的显示，无法解析标签</p>
-    <p>{{ websiteTag }}</p>
-    <p>v-html预期的显示，可以解析html标签</p>
-    <p v-html="websiteTag"></p>
-    <p>
-      <input type="text" value="name">
-      <input type="text" :value="name">
-    </p>
+
+    <div>
+      <h1>键盘Event及其修饰符</h1>
+      <label for="">姓名</label>
+      <input type="text" v-on:keyup.enter="logName">
+
+      <label for="">年龄</label>
+      <input type="text" v-on:keyup.alt.enter="logAge">
+    </div>
   </div>
 </body>
 <script src="app.js"></script>
