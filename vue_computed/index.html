@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue computed</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>
+      computed:计算属性
+    </h1>
+    <!-- methods -->
+    <button @click="a++">a++</button>
+    <button @click="b++">b++</button>
+    <!-- <p>a: {{ a }}</p>
+    <p>b: {{ b }}</p>
+    <p>age + a {{ addToA() }}</p>
+    <p>age + b {{ addToB() }}</p>
+    <p>methods只要函数中的相关属性发生变化，另一个函数也会执行，值未发生变化，但是执行了</p> -->
+    <p>methods点击任何一个都会触发</p>
+    <!-- computed -->
+    <p>计算属性不能加圆括号，而必须有return返回值</p>
+    <p>只有数据发生变化才去更新他，如果没有发生变化就不执行</p>
+    <p>进行搜索使用computed</p>
+    <p>数据变化频率高样式</p>
+    <p>age + a {{ addToA }}</p>
+    <p>age + b {{ addToB }}</p>
+  </div>
+</body>
+<script src="app.js"></script>
+</html>
