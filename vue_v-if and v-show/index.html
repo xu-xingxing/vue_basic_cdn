@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> vue 条件 v-if and v-show </title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>
+      vue 条件 v-if and v-show
+    </h1>
+    <h2>示例1 v-if</h2>
+    <div>
+      <button @click="error = !error">toggle error</button>
+      <button @click="success = !success">toggle success</button>
+      <p v-if="error">error:如果条件为真， 那么实现</p>
+      <p v-else-if="success">success:如果条件为真， 那么实现</p>
+      <p v-else>other</p>
+    </div>
+
+    <h2>示例2 v-show</h2>
+      <p v-show="error">网络连接错误：404</p>
+      <p v-show="success">网络连接成功： 200</p>
+      <p>v-if 当条件为假此标签不存在</p>
+      <p>v-show 不管条件存不存在标签一直存在，只是显示为display:none,当条件为真时显示</p>
+  </div>
+</body>
+<script src="app.js"></script>
+</html>
