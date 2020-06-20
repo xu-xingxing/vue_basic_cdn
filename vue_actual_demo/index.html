@@ -8,25 +8,21 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-  <div id="app">
-    <h1>
-      vue 实战demo
-    </h1>
-    <!-- bag image -->
-    <div id="bag" :class="{burst:ended}"></div>
-
-    <!-- bag health -->
-    <div id="bag-health">
-      <div :style="{width: health + '%'}" ></div>
-    </div>
-
-    <!-- game control -->
-    <div id="controls">
-      <button @click='punch' v-if="!ended">Punch</button>
-      <button @click="restart">Restart</button>
-    </div>
-    <div>
+  <h1>
+    多个vue实例
+  </h1>
+  <div id="vue-app-one">
+    <h2>{{ title }}</h2>
+    <p>{{ greet }}</p>
   </div>
+  <div id="vue-app-two">
+    <h2>{{ title }}</h2>
+    <p>{{ greet }}</p>
+    <button @click="changeAppOne">change app one</button>
+  </div>
+  <p>1.实现两个vue实例</p>
+  <p>2.实现app two 更改 app one的title</p>
+  <p>3.实现在实例外部更改实例data中的值</p>
 </body>
 <script src="app.js"></script>
 </html>
