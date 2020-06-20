@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> vue 实战demo </title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>vue数据请求Fetch</h1>
+    <h2>Fetct post请求</h2>
+    <form @submit.prevent="onSubmit">
+      <input type="text" v-model="todo.title">
+      <input type="checkbox" v-model="todo.completed">
+      <input type="submit" value="提交">
+    </form>
+    
+    <h2>Fetch get请求</h2>
+    <ul>
+      <li v-for="todo in todos">
+        <h1>title: {{todo.title}}</h1>
+        <p v-if="todo.completed">completed: {{todo.completed}}</p>
+      </li>
+    </ul>
+    <h1>vue数据请求Axios</h1>
+  </div>
+</body>
+<script src="app.js"></script>
+</html>
