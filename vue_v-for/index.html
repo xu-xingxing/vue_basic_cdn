@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> vue 条件 v-if and v-show </title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>
+      vue 条件 v-for
+    </h1>
+    <h2>示例1 v-for 数组</h2>
+    <div>
+      <!-- {{ characters[0] }}
+      {{ characters[1] }}
+      {{ characters[2] }}
+      {{ characters[3] }} -->
+    </div>
+    <!-- <ul>
+      <li v-for="character in characters">{{ character }}</li>
+    </ul> -->
+    <ul>
+      <li v-for="(character, index) in characters" :key="index">{{ index }} - {{ character }}</li>
+    </ul>
+    <ul>
+      <li v-for="(user, index) in users" :key="index">{{ index }} - name: {{ user.name }} age: {{ user.age }}</li>
+    </ul>
+    <template v-for="(user, index) in users" :key="index">
+      <h2>{{user.name}}</h2>
+      <p>{{user.age}}</p>
+    </template>
+    <p>如果使用div进行循环的话，可能产生很多空div标签，此时可以使用template替代div</p>
+    <!-- 遍历对象 -->
+    <h2>示例1 v-for 对象</h2>
+    <template v-for="(user, index) in users">
+      <div v-for="(val, key) of user">
+        {{key}}-{{val}}
+      </div>
+    </template>
+  </div>
+</body>
+<script src="app.js"></script>
+</html>
